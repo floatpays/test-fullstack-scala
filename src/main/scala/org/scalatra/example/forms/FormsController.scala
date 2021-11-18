@@ -4,15 +4,12 @@ import org.scalatra._
 import org.scalatra.i18n.I18nSupport
 import org.scalatra.forms._
 
-case class ValidationForm(text: String, email: Option[String], number: Option[Int], checkbox: Seq[String])
+case class ValidationForm(name: String)
 
 class FormsController extends ScalatraServlet with FormSupport with I18nSupport {
 
   val form = mapping(
-    "text"     -> label("Text", text(required, maxlength(100))),
-    "email"    -> label("Email", optional(text(pattern(".+@.+"), maxlength(20)))),
-    "number"   -> label("Number", optional(number())),
-    "checkbox" -> list(text())
+    "name"     -> label("Text", text(required, maxlength(100))),
   )(ValidationForm.apply)
 
   get("/") {
