@@ -1,7 +1,7 @@
 ## Build & Run ##
 
 ```sh
-$ cd floatpays
+$ cd test-fullstack-scala
 $ sbt ~jetty:start
 ```
 
