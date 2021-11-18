@@ -22,5 +22,4 @@ class FormsController extends ScalatraServlet with FormSupport with I18nSupport 
       form   => html.result(form)
     )
   }
-
 }
